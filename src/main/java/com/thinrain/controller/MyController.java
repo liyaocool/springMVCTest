@@ -9,6 +9,6 @@ public class MyController implements Controller {
         httpServletRequest.setAttribute("name", "张三");
         ModelAndView mv= new ModelAndView();
         mv.setViewName("/WEB-INF/hello.jsp");
-        return null;
+        return mv;
     }
 }

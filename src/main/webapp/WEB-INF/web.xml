@@ -5,17 +5,17 @@
          version="4.0">
     <!--    springMVC配置-->
     <servlet>
-        <servlet-name>mySpringMVC</servlet-name>
+        <servlet-name>springmvc</servlet-name>
         <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
 
         <!-- 默认：WEB.INF下找mySpringMVC-servlet.xml    我们手动从resource引入配置文件-->
         <init-param>
             <param-name>contextConfigLocation</param-name>
-            <param-value>classpath:mySpringMVC-servlet.xml</param-value>
+            <param-value>classpath:springmvc-servlet.xml</param-value>
         </init-param>
     </servlet>
     <servlet-mapping>
-        <servlet-name>mySpringMVC</servlet-name>
+        <servlet-name>springmvc</servlet-name>
         <url-pattern>/</url-pattern>
     </servlet-mapping>
 </web-app>
