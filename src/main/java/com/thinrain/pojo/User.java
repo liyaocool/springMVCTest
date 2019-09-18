@@ -3,6 +3,15 @@ package com.thinrain.pojo;
 public class User {
     private String name;
     private Integer age;
+    private Card card;
+
+    public Card getCard() {
+        return card;
+    }
+
+    public void setCard(Card card) {
+        this.card = card;
+    }
 
     public String getName() {
         return name;
@@ -25,6 +34,7 @@ public class User {
         return "User{" +
                 "name='" + name + '\'' +
                 ", age=" + age +
+                ", card=" + card +
                 '}';
     }
 }
