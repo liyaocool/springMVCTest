@@ -8,7 +8,7 @@ public class MyController implements Controller {
         System.out.println("哇，这是第一个springMVC程序！");
         httpServletRequest.setAttribute("name", "张三");
         ModelAndView mv= new ModelAndView();
-        mv.setViewName("/WEB-INF/hello.jsp");
+        mv.setViewName("/WEB-INF/jsp/hello.jsp");
         return mv;
     }
 }
