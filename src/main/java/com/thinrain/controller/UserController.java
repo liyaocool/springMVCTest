@@ -1,7 +1,10 @@
 package com.thinrain.controller;
 
+import com.fasterxml.jackson.databind.util.JSONPObject;
 import com.thinrain.pojo.User;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
@@ -10,10 +13,9 @@ public class UserController {
     @RequestMapping("/user")
     public String user() {
         System.out.println("user...");
-        return "/WEB-INF/jsp/user.jsp";
+        return "user";
     }
 
-    //        /getStringParam?userName=zhangsan&age=13
     @RequestMapping("/getStringParam")
     @ResponseBody
     public String getStringParam(String userName, String age) {
@@ -21,19 +23,24 @@ public class UserController {
         return "welcome!" + userName + "," + age;
     }
 
-    //        /getObjectParam?name=lisi&age=14
     @RequestMapping("/getObjectParam")
     @ResponseBody
-    public String getSObjectParam(User user) {
-        System.out.println(user.getName() + "," + user.getAge());
-        return "welcome!" + user.getName() + "," + user.getAge();
+    public String getObjectParam(User user) {
+        System.out.println(user.getUserName() + "," + user.getAge());
+        return "welcome!" + user.getUserName() + "," + user.getAge();
     }
 
-    //        /getObjectsParam?name=lisi&age=14&card.cardNo=666
     @RequestMapping("/getObjectsParam")
     @ResponseBody
-    public String getSObjectsParam(User user) {
-        System.out.println("name:" + user.getName() + " age:" + user.getAge()+" card:"+user.getCard());
-        return "welcome!" + user.getName() + "," + user.getAge();
+    public String getObjectsParam(User user) {
+        System.out.println("name:" + user.getUserName() + " age:" + user.getAge() + " card:" + user.getCard());
+        return "welcome!" + user.getUserName() + "," + user.getAge() + " card:" + user.getCard();
+    }
+
+    @PostMapping(value = "/getJsonParam", consumes = {"application/json"})
+    @ResponseBody
+    public String getJsonParam(@RequestBody User user) {
+
+        return "welcome!" + user.getUserName() + user.getAge();
     }
 }

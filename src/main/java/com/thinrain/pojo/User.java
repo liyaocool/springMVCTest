@@ -1,24 +1,15 @@
 package com.thinrain.pojo;
 
 public class User {
-    private String name;
+    private String userName;
     private Integer age;
-    private Card card;
 
-    public Card getCard() {
-        return card;
+    public String getUserName() {
+        return userName;
     }
 
-    public void setCard(Card card) {
-        this.card = card;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
+    public void setUserName(String userName) {
+        this.userName = userName;
     }
 
     public Integer getAge() {
@@ -29,10 +20,20 @@ public class User {
         this.age = age;
     }
 
+    private Card card;
+
+    public Card getCard() {
+        return card;
+    }
+
+    public void setCard(Card card) {
+        this.card = card;
+    }
+
     @Override
     public String toString() {
         return "User{" +
-                "name='" + name + '\'' +
+                "userName='" + userName + '\'' +
                 ", age=" + age +
                 ", card=" + card +
                 '}';
