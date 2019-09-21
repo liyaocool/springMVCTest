@@ -9,6 +9,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Controller
 public class UserController {
     @RequestMapping("/user")
@@ -38,18 +41,18 @@ public class UserController {
         return "welcome!" + user.getUserName() + "," + user.getAge() + " card:" + user.getCard();
     }
 
-    @PostMapping("/getJsonParam")
+    @RequestMapping("/getJsonParam")
     @ResponseBody
     public String getJsonParam(@RequestBody User user) {
         System.out.println("name:" + user.getUserName() + " age:" + user.getAge() + " card:" + user.getCard());
         return "welcome!" + user.getUserName() + "," + user.getAge() + " card:" + user.getCard();
     }
 
-    @PostMapping("/getUserInfo")
+    @RequestMapping("/getUserInfo")
     @ResponseBody
     public User getUserInfo() {
         User user = new User();
-        user.setUserName("Tom");
+        user.setUserName("丁不四");
         user.setAge(34);
         Card card = new Card();
         card.setCardNo(99);
@@ -57,4 +60,23 @@ public class UserController {
         System.out.println("getUserInfo");
         return user;
     }
+
+    @RequestMapping("/getUserList")
+    @ResponseBody
+    public List<User> getUserList() {
+        List<User> list = new ArrayList<>();
+
+        User user = new User();
+        user.setUserName("Tom");
+        user.setAge(34);
+        Card card = new Card();
+        card.setCardNo(99);
+        user.setCard(card);
+
+        list.add(user);
+
+        System.out.println("getUserList");
+        return list;
+    }
+
 }
