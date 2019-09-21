@@ -15,6 +15,11 @@
           <element id="library" level="project" name="Maven: org.springframework:spring-jcl:5.1.9.RELEASE" />
           <element id="library" level="project" name="Maven: org.springframework:spring-expression:5.1.9.RELEASE" />
           <element id="library" level="project" name="Maven: org.springframework:spring-web:5.1.9.RELEASE" />
+          <element id="library" level="project" name="Maven: javax.servlet.jsp.jstl:jstl:1.2" />
+          <element id="library" level="project" name="Maven: taglibs:standard:1.1.2" />
+          <element id="library" level="project" name="Maven: com.fasterxml.jackson.core:jackson-databind:2.9.9" />
+          <element id="library" level="project" name="Maven: com.fasterxml.jackson.core:jackson-core:2.9.9" />
+          <element id="library" level="project" name="Maven: com.fasterxml.jackson.core:jackson-annotations:2.9.9" />
         </element>
       </element>
       <element id="javaee-facet-resources" facet="springMVCTest/web/Web" />

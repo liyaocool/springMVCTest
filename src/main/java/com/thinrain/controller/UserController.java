@@ -1,6 +1,7 @@
 package com.thinrain.controller;
 
 import com.fasterxml.jackson.databind.util.JSONPObject;
+import com.thinrain.pojo.Card;
 import com.thinrain.pojo.User;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -18,7 +19,7 @@ public class UserController {
 
     @RequestMapping("/getStringParam")
     @ResponseBody
-    public String getStringParam(String userName, String age) {
+    public String getStringParam(String userName, Integer age) {
         System.out.println(userName + "," + age);
         return "welcome!" + userName + "," + age;
     }
@@ -37,10 +38,23 @@ public class UserController {
         return "welcome!" + user.getUserName() + "," + user.getAge() + " card:" + user.getCard();
     }
 
-    @PostMapping(value = "/getJsonParam", consumes = {"application/json"})
+    @PostMapping("/getJsonParam")
     @ResponseBody
     public String getJsonParam(@RequestBody User user) {
+        System.out.println("name:" + user.getUserName() + " age:" + user.getAge() + " card:" + user.getCard());
+        return "welcome!" + user.getUserName() + "," + user.getAge() + " card:" + user.getCard();
+    }
 
-        return "welcome!" + user.getUserName() + user.getAge();
+    @PostMapping("/getUserInfo")
+    @ResponseBody
+    public User getUserInfo() {
+        User user = new User();
+        user.setUserName("Tom");
+        user.setAge(34);
+        Card card = new Card();
+        card.setCardNo(99);
+        user.setCard(card);
+        System.out.println("getUserInfo");
+        return user;
     }
 }
