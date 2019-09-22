@@ -1,6 +1,5 @@
 package com.thinrain.controller;
 
-import com.fasterxml.jackson.databind.util.JSONPObject;
 import com.thinrain.pojo.Card;
 import com.thinrain.pojo.User;
 import org.springframework.stereotype.Controller;
@@ -14,10 +13,17 @@ import java.util.List;
 
 @Controller
 public class UserController {
+    @RequestMapping("/hello")
+    public String hello() {
+        System.out.println("hello...");
+        return "hello";
+    }
     @RequestMapping("/user")
     public String user() {
         System.out.println("user...");
-        return "user";
+//        return "user";
+//        return "hello"; //服务器内部转发
+        return "redirect:hello";//客户端重定向
     }
 
     @RequestMapping("/getStringParam")
