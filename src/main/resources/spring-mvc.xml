@@ -25,4 +25,12 @@
         <property name="prefix" value="/WEB-INF/jsp/"/>
         <property name="suffix" value=".jsp"/>
     </bean>
+
+    <!--    文件上传解析器-->
+    <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+        <!--        设置文件格式-->
+        <property name="defaultEncoding" value="utf-8"/>
+        <!--        设置文件大小-->
+        <property name="maxInMemorySize" value="1024000"/>
+    </bean>
 </beans>

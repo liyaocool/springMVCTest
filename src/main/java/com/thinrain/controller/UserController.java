@@ -3,7 +3,6 @@ package com.thinrain.controller;
 import com.thinrain.pojo.Card;
 import com.thinrain.pojo.User;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -13,11 +12,7 @@ import java.util.List;
 
 @Controller
 public class UserController {
-    @RequestMapping("/hello")
-    public String hello() {
-        System.out.println("hello...");
-        return "hello";
-    }
+
     @RequestMapping("/user")
     public String user() {
         System.out.println("user...");
