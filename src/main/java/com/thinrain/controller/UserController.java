@@ -16,9 +16,9 @@ public class UserController {
     @RequestMapping("/user")
     public String user() {
         System.out.println("user...");
-//        return "user";
+        return "user";
 //        return "hello"; //服务器内部转发
-        return "redirect:hello";//客户端重定向
+//        return "redirect:hello";//客户端重定向
     }
 
     @RequestMapping("/getStringParam")

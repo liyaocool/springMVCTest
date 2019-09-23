@@ -17,7 +17,21 @@
                 <property name="supportedMediaTypes" value="text/plain;charset=utf-8"/>
             </bean>
         </mvc:message-converters>
+
     </mvc:annotation-driven>
+    <!--        配置拦截器-->
+    <mvc:interceptors>
+        <mvc:interceptor>
+            <!--单个/*只拦截一层，/**拦截多层-->
+            <mvc:mapping path="/my/**"/>
+            <bean class="com.thinrain.interceptor.FirstInterceptor"/>
+        </mvc:interceptor>
+
+        <mvc:interceptor>
+            <mvc:mapping path="/my/**"/>
+            <bean class="com.thinrain.interceptor.SecondInterceptor"/>
+        </mvc:interceptor>
+    </mvc:interceptors>
     <!--    扫描注解的组件-->
     <context:component-scan base-package="com.thinrain.controller"/>
     <!--    视图解析器-->
